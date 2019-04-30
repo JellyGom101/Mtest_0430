@@ -140,21 +140,21 @@ int main(void)
 			pattern <<= 1;
 			if (pattern == 0) pattern = 0x01;
 
-//			if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1) == 0)
-//			{
-//				LED_STATES = RIGHT_SHFIT;
-//			}
+			if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1) == 0)
+			{
+				LED_STATES = RIGHT_SHFIT;
+			}
 		}
-//				else if (LED_STATES == RIGHT_SHFIT)
-//				{
-//					pattern >>= 1;
-//					if (pattern == 0) pattern = 0x80;
-//
-//					if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == 0)
-//					{
-//						LED_STATES = LEFT_SHIFT;
-//					}
-//				}
+				else if (LED_STATES == RIGHT_SHFIT)
+				{
+					pattern >>= 1;
+					if (pattern == 0) pattern = 0x80;
+
+					if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == 0)
+					{
+						LED_STATES = LEFT_SHIFT;
+					}
+				}
 				ByteDataWrite(~pattern);
 				HAL_Delay(300);
 
